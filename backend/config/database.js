@@ -2,11 +2,8 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    // MongoDB connection options
-    const options = {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    };
+    // MongoDB connection options (no longer need useNewUrlParser/useUnifiedTopology)
+    const options = {};
 
     const conn = await mongoose.connect(process.env.MONGODB_URI, options);
 
