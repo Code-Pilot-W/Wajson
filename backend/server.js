@@ -14,8 +14,8 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? ['https://your-frontend-domain.com'] 
+  origin: process.env.NODE_ENV === 'production'
+    ? ['https://wajson-frontend.vercel.app'] // Update to your actual Vercel frontend URL
     : ['http://localhost:3000'],
   credentials: true
 }));
