@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { profileAPI } from '../../services/api';
 import { getImageUrl } from '../../utils/imageUtils';
 import './ProfileSection.css';
+import { UserGold } from 'phosphor-react';
 
 function ProfileSection({ profile, onUpdate, onRefresh }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -486,33 +487,16 @@ function ProfileSection({ profile, onUpdate, onRefresh }) {
       ) : (
         <div className="profile-display">
           <div className="info-grid">
-            <div className="info-card">
-              <h3>Personal Information</h3>
-              <div className="info-item">
-                <strong>Full Name:</strong>
-                {profile.profile?.firstName || profile.profile?.lastName 
-                  ? `${profile.profile.firstName} ${profile.profile.lastName}`.trim()
-                  : 'Not specified'
-                }
-              </div>
-              <div className="info-item">
-                <strong>Username:</strong> {profile.username}
-              </div>
-              <div className="info-item">
-                <strong>Email:</strong> {profile.email}
-              </div>
-              <div className="info-item">
-                <strong>Phone:</strong> {profile.profile?.phone || 'Not specified'}
-              </div>
-              <div className="info-item">
-                <strong>Location:</strong> {profile.profile?.location || 'Not specified'}
-              </div>
-              <div className="info-item">
-                <strong>Date of Birth:</strong> 
-                {profile.profile?.dateOfBirth 
-                  ? new Date(profile.profile.dateOfBirth).toLocaleDateString()
-                  : 'Not specified'
-                }
+            <div className="overview-card personal-info-card">
+              <div className="card-icon"><UserGold /></div>
+              <div className="card-content">
+                <h3>Personal Information</h3>
+                <div className="info-item"><strong>Full Name:</strong> {profile.profile?.firstName || profile.profile?.lastName ? `${profile.profile.firstName} ${profile.profile.lastName}`.trim() : 'Not specified'}</div>
+                <div className="info-item"><strong>Username:</strong> {profile.username}</div>
+                <div className="info-item"><strong>Email:</strong> {profile.email}</div>
+                <div className="info-item"><strong>Phone:</strong> {profile.profile?.phone || 'Not specified'}</div>
+                <div className="info-item"><strong>Location:</strong> {profile.profile?.location || 'Not specified'}</div>
+                <div className="info-item"><strong>Date of Birth:</strong> {profile.profile?.dateOfBirth ? new Date(profile.profile.dateOfBirth).toLocaleDateString() : 'Not specified'}</div>
               </div>
             </div>
 
