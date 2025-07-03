@@ -742,7 +742,54 @@
   }
 }
 
-/* Prevent horizontal scroll on mobile */
+@media (max-width: 900px) {
+  .profile-section {
+    padding: 1rem 0.2rem;
+    width: 100vw;
+    min-width: 0;
+    border-radius: 0;
+    box-sizing: border-box;
+    overflow-x: visible;
+  }
+  .profile-display {
+    width: 100vw;
+    min-width: 0;
+    border-radius: 0;
+    padding: 0.5rem 0.1rem;
+    box-sizing: border-box;
+    overflow-x: visible;
+  }
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    width: 100vw;
+    min-width: 0;
+    padding: 0.5rem 0.1rem;
+    box-sizing: border-box;
+    overflow-x: visible;
+  }
+  .overview-card, .personal-info-card, .about-card, .social-card {
+    padding: 0.7rem 0.3rem;
+    border-radius: 10px;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow-x: visible;
+    word-break: break-word;
+  }
+  .card-icon {
+    min-width: 32px;
+    min-height: 32px;
+  }
+  .card-content h3 {
+    font-size: 1.05rem;
+  }
+  .info-item {
+    font-size: 0.97rem;
+    padding: 0.2rem 0;
+  }
+}
+
 body, html, #root {
   max-width: 100vw;
   overflow-x: hidden;
