@@ -651,21 +651,33 @@
     border-radius: 0;
     box-sizing: border-box;
   }
+  .profile-display {
+    width: 100vw;
+    min-width: 0;
+    border-radius: 0;
+    padding: 0.5rem 0;
+    box-sizing: border-box;
+    overflow-x: visible;
+  }
   .info-grid {
     grid-template-columns: 1fr;
     gap: 0.5rem;
-    width: 100%;
+    width: 100vw;
+    min-width: 0;
+    padding: 0.5rem 0.2rem;
+    box-sizing: border-box;
   }
   .info-card {
     padding: 0.75rem 0.5rem;
     border-radius: 8px;
     width: 100%;
+    min-width: 0;
     box-sizing: border-box;
-    overflow-x: auto;
+    overflow-x: visible;
   }
-  .profile-display {
-    width: 100%;
-    overflow-x: auto;
+  .info-item strong {
+    min-width: 90px;
+    font-size: 0.95rem;
   }
 }
 
