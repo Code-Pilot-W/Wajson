@@ -549,7 +549,7 @@ export const applicationsAPI = {
   },
 };
 
-export default {
+const api = {
   auth: authAPI,
   users: usersAPI,
   posts: postsAPI,
@@ -558,3 +558,5 @@ export default {
   applications: applicationsAPI,
   health: healthAPI,
 };
+
+export default api;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { profileAPI } from '../../services/api';
 import { getImageUrl } from '../../utils/imageUtils';
 import './ProfileSection.css';
-import { UserGold } from 'phosphor-react';
+import { UserGold } from './GoldIcons';
 
 function ProfileSection({ profile, onUpdate, onRefresh }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -500,51 +500,56 @@ function ProfileSection({ profile, onUpdate, onRefresh }) {
               </div>
             </div>
 
-            <div className="info-card">
-              <h3>About</h3>
-              <p className="bio">
-                {profile.profile?.bio || 'No bio available. Click "Edit Profile" to add your bio.'}
-              </p>
-              
-              {profile.profile?.website && (
-                <div className="website">
-                  <strong>Website:</strong> 
-                  <a href={profile.profile.website} target="_blank" rel="noopener noreferrer">
-                    {profile.profile.website}
-                  </a>
-                </div>
-              )}
+            <div className="overview-card about-card">
+              <div className="card-icon"><UserGold /></div>
+              <div className="card-content">
+                <h3>About</h3>
+                <p className="bio">
+                  {profile.profile?.bio || 'No bio available. Click "Edit Profile" to add your bio.'}
+                </p>
+                {profile.profile?.website && (
+                  <div className="website">
+                    <strong>Website:</strong> 
+                    <a href={profile.profile.website} target="_blank" rel="noopener noreferrer">
+                      {profile.profile.website}
+                    </a>
+                  </div>
+                )}
+              </div>
             </div>
 
-            <div className="info-card">
-              <h3>Social Links</h3>
-              <div className="social-links">
-                {profile.profile?.socialLinks?.linkedin && (
-                  <a href={profile.profile.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="social-link linkedin">
-                    LinkedIn
-                  </a>
-                )}
-                {profile.profile?.socialLinks?.twitter && (
-                  <a href={profile.profile.socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="social-link twitter">
-                    Twitter
-                  </a>
-                )}
-                {profile.profile?.socialLinks?.github && (
-                  <a href={profile.profile.socialLinks.github} target="_blank" rel="noopener noreferrer" className="social-link github">
-                    GitHub
-                  </a>
-                )}
-                {profile.profile?.socialLinks?.portfolio && (
-                  <a href={profile.profile.socialLinks.portfolio} target="_blank" rel="noopener noreferrer" className="social-link portfolio">
-                    Portfolio
-                  </a>
-                )}
-                {!profile.profile?.socialLinks?.linkedin && 
-                 !profile.profile?.socialLinks?.twitter && 
-                 !profile.profile?.socialLinks?.github && 
-                 !profile.profile?.socialLinks?.portfolio && (
-                  <p>No social links added yet.</p>
-                )}
+            <div className="overview-card social-card">
+              <div className="card-icon"><UserGold /></div>
+              <div className="card-content">
+                <h3>Social Links</h3>
+                <div className="social-links">
+                  {profile.profile?.socialLinks?.linkedin && (
+                    <a href={profile.profile.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="social-link linkedin">
+                      LinkedIn
+                    </a>
+                  )}
+                  {profile.profile?.socialLinks?.twitter && (
+                    <a href={profile.profile.socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="social-link twitter">
+                      Twitter
+                    </a>
+                  )}
+                  {profile.profile?.socialLinks?.github && (
+                    <a href={profile.profile.socialLinks.github} target="_blank" rel="noopener noreferrer" className="social-link github">
+                      GitHub
+                    </a>
+                  )}
+                  {profile.profile?.socialLinks?.portfolio && (
+                    <a href={profile.profile.socialLinks.portfolio} target="_blank" rel="noopener noreferrer" className="social-link portfolio">
+                      Portfolio
+                    </a>
+                  )}
+                  {!profile.profile?.socialLinks?.linkedin && 
+                   !profile.profile?.socialLinks?.twitter && 
+                   !profile.profile?.socialLinks?.github && 
+                   !profile.profile?.socialLinks?.portfolio && (
+                    <p>No social links added yet.</p>
+                  )}
+                </div>
               </div>
             </div>
           </div>
