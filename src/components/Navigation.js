@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import './Navigation.css';
@@ -16,6 +16,7 @@ import {
 function Navigation() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleLogout = () => {
     logout();
@@ -54,8 +55,7 @@ function Navigation() {
             <span className="brand-text">Wajson</span>
           </div>
         </Link>
-                
-        <div className="nav-menu">
+        <div className={`nav-menu${mobileMenuOpen ? ' open' : ''}`}>
           <Link to="/" className="nav-link">
             <span className="nav-icon"><HomeGold /></span>
             Home
@@ -103,9 +103,7 @@ function Navigation() {
             </div>
           )}
         </div>
-
-        {/* Mobile Menu Toggle (for future mobile implementation) */}
-        <div className="mobile-menu-toggle">
+        <div className="mobile-menu-toggle" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu" tabIndex={0}>
           <span></span>
           <span></span>
           <span></span>
