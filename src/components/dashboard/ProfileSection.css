@@ -644,18 +644,19 @@
 
 @media (max-width: 600px) {
   .profile-section {
-    padding: 0.5rem;
-    margin-top: 20px;
+    padding: 0.5rem 0.1rem;
+    margin-top: 10px;
     width: 100vw;
     min-width: 0;
     border-radius: 0;
     box-sizing: border-box;
+    overflow-x: visible;
   }
   .profile-display {
     width: 100vw;
     min-width: 0;
     border-radius: 0;
-    padding: 0.5rem 0;
+    padding: 0.5rem 0.1rem;
     box-sizing: border-box;
     overflow-x: visible;
   }
@@ -664,20 +665,28 @@
     gap: 0.5rem;
     width: 100vw;
     min-width: 0;
-    padding: 0.5rem 0.2rem;
+    padding: 0.5rem 0.1rem;
     box-sizing: border-box;
+    overflow-x: visible;
   }
   .info-card {
-    padding: 0.75rem 0.5rem;
+    padding: 0.5rem 0.2rem;
     border-radius: 8px;
     width: 100%;
     min-width: 0;
     box-sizing: border-box;
     overflow-x: visible;
+    word-break: break-word;
   }
   .info-item strong {
-    min-width: 90px;
+    min-width: 70px;
     font-size: 0.95rem;
+    word-break: break-word;
+  }
+  .info-item {
+    padding: 0.3rem 0;
+    font-size: 0.95rem;
+    word-break: break-word;
   }
 }
 
