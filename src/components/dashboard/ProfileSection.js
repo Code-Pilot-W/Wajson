@@ -510,7 +510,7 @@ function ProfileSection({ profile, onUpdate, onRefresh }) {
                 {profile.profile?.website && (
                   <div className="website">
                     <strong>Website:</strong> 
-                    <a href={profile.profile.website} target="_blank" rel="noopener noreferrer">
+                    <a href={profile.profile.website} target="_blank" rel="noopener noreferrer" style={{ wordBreak: 'break-all' }}>
                       {profile.profile.website}
                     </a>
                   </div>
@@ -524,22 +524,22 @@ function ProfileSection({ profile, onUpdate, onRefresh }) {
                 <h3>Social Links</h3>
                 <div className="social-links">
                   {profile.profile?.socialLinks?.linkedin && (
-                    <a href={profile.profile.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="social-link linkedin">
+                    <a href={profile.profile.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="social-link linkedin" style={{ wordBreak: 'break-all' }}>
                       LinkedIn
                     </a>
                   )}
                   {profile.profile?.socialLinks?.twitter && (
-                    <a href={profile.profile.socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="social-link twitter">
+                    <a href={profile.profile.socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="social-link twitter" style={{ wordBreak: 'break-all' }}>
                       Twitter
                     </a>
                   )}
                   {profile.profile?.socialLinks?.github && (
-                    <a href={profile.profile.socialLinks.github} target="_blank" rel="noopener noreferrer" className="social-link github">
+                    <a href={profile.profile.socialLinks.github} target="_blank" rel="noopener noreferrer" className="social-link github" style={{ wordBreak: 'break-all' }}>
                       GitHub
                     </a>
                   )}
                   {profile.profile?.socialLinks?.portfolio && (
-                    <a href={profile.profile.socialLinks.portfolio} target="_blank" rel="noopener noreferrer" className="social-link portfolio">
+                    <a href={profile.profile.socialLinks.portfolio} target="_blank" rel="noopener noreferrer" className="social-link portfolio" style={{ wordBreak: 'break-all' }}>
                       Portfolio
                     </a>
                   )}
